@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mi Perfil</title>
+</head>
+<body>
+    <h2>Mi Perfil</h2>
+
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre">
+
+<label for="apellido">Apellido</label>
+<input type="text" id="apellido">
+
+<label for="fechaNacimiento">Fecha de nacimiento</label>
+<input type="date" id="fechaNacimiento">
+
+<label for="ciudadNacimiento">Ciudad de nacimiento</label>
+<input type="text" id="ciudadNacimiento">
+
+<label for="tipoDocumento">Tipo de documento</label>
+<select id="tipoDocumento">
+    <option value="">Seleccionar</option>
+    <option value="CC">Cédula de ciudadanía</option>
+    <option value="CE">Cédula de extranjería</option>
+    <option value="TI">Tarjeta de identidad</option>
+    <option value="PAS">Pasaporte</option>
+    <option value="OTRO">Otro</option>
+</select>
+
+<label for="numeroDocumento">Número de documento</label>
+<input type="text" id="numeroDocumento">
+
+<label for="correo">Correo electrónico</label>
+<input type="email" id="correo">
+
+<label for="telefono">Teléfono</label>
+<input type="tel" id="telefono">
+
+<label for="ciudadResidencia">Ciudad de residencia</label>
+<input type="text" id="ciudadResidencia">
+
+<h3>Información académica</h3>
+
+<label for="universidad">Universidad o institución</label>
+<input type="text" id="universidad">
+
+<label for="carrera">Carrera o grado académico</label>
+<input type="text" id="carrera">
+
+<label for="fechaInicioEstudios">Inicio de estudios</label>
+<input type="date" id="fechaInicioEstudios">
+
+<label for="fechaFinEstudios">Finalización de estudios (opcional)</label>
+<input type="date" id="fechaFinEstudios">
+
+<button id="guardar">Guardar perfil</button>
+
+    <h3>Datos para autocompletar</h3>
+
+    <div id="seleccion">
+  <label><input type="checkbox" value="nombre" checked> Nombre</label>
+  <label><input type="checkbox" value="apellido" checked> Apellido</label>
+  <label><input type="checkbox" value="fechaNacimiento" checked> Fecha de nacimiento</label>
+  <label><input type="checkbox" value="ciudadNacimiento" checked> Ciudad de nacimiento</label>
+  <label><input type="checkbox" value="tipoDocumento" checked> Tipo de documento</label>
+  <label><input type="checkbox" value="numeroDocumento" checked> Número de documento</label>
+  <label><input type="checkbox" value="correo" checked> Correo</label>
+  <label><input type="checkbox" value="telefono" checked> Teléfono</label>
+  <label><input type="checkbox" value="ciudadResidencia" checked> Ciudad de residencia</label>
+  <label><input type="checkbox" value="universidad" checked> Universidad</label>
+  <label><input type="checkbox" value="carrera" checked> Carrera</label>
+  <label><input type="checkbox" value="fechaInicioEstudios" checked> Inicio de estudios</label>
+  <label><input type="checkbox" value="fechaFinEstudios" checked> Fin de estudios</label>
+</div>
+
+    <button id="autocompletar">Autocompletar formulario</button>
+
+    <p id="mensaje" role="status"></p>
+
+    <script src="popup.js"></script>
+</body>
+</html>
