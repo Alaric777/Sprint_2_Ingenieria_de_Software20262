@@ -1,61 +1,176 @@
-body {
-    font-family: Arial, sans-serif;
-    width: 320px;
-    padding: 15px;
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
 }
 
-h2, h3 {
-    text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    width: 360px;
+    max-height: 580px;
+    overflow-y: auto;
+    padding: 18px;
+    margin: 0;
+    background-color: #f5f7fb;
+    color: #263449;
 }
+
+/* ==============================
+   TÍTULOS
+================================ */
+
+h2 {
+    text-align: center;
+    color: #173b67;
+    font-size: 23px;
+    margin: 5px 0 20px;
+}
+
+h3 {
+    color: #24558a;
+    font-size: 16px;
+    margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dce5ef;
+}
+
+/* ==============================
+   ETIQUETAS Y CAMPOS
+================================ */
 
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34445a;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="date"],
+select {
+    display: block;
     width: 100%;
-    padding: 7px;
-    margin-top: 4px;
-    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d5deea;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #263449;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+input:focus,
+select:focus {
+    border-color: #3679bd;
+    box-shadow: 0 0 0 3px rgba(54, 121, 189, 0.12);
+}
+
+/* ==============================
+   SELECCIÓN DE DATOS
+================================ */
+
 #seleccion {
-    margin-top: 10px;
-    padding: 10px;
-    background: #f2f2f2;
-    border-radius: 5px;
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #dce5ef;
+    border-radius: 9px;
 }
 
 #seleccion label {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 6px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 12px;
+    gap: 9px;
+    margin-top: 9px;
+    font-size: 12px;
+    font-weight: normal;
     cursor: pointer;
 }
 
-#mensaje {
-    font-size: 12px;
-    text-align: center;
+#seleccion input[type="checkbox"] {
+    accent-color: #2869a8;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
 }
 
-input[type="date"],
-select {
+/* ==============================
+   BOTONES
+================================ */
+
+button {
+    display: block;
     width: 100%;
-    padding: 7px;
-    margin-top: 4px;
-    box-sizing: border-box;
+    padding: 11px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2869a8;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-h3 {
-    margin-top: 20px;
+button:hover {
+    background-color: #1d527f;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #91a8bf;
+    cursor: not-allowed;
+}
+
+/* Botón de autocompletado */
+
+#autocompletar {
+    background-color: #173b67;
+}
+
+#autocompletar:hover {
+    background-color: #102d50;
+}
+
+/* ==============================
+   MENSAJES
+================================ */
+
+#mensaje {
+    min-height: 16px;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    color: #52657c;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   BARRA DE DESPLAZAMIENTO
+================================ */
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #b8c7d8;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #edf1f6;
 }
