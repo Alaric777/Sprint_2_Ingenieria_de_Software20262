@@ -109,3 +109,14 @@ Create table EdicionInfoAcademica(
 	Id_infoAcademica INT not null,
 	constraint fk_infoAcademic_Edicion foreign key (Id_infoAcademica) References InformacionAcademica(Id_infoAcademica)
 );
+
+CREATE TABLE CamposOcultos (
+    Id_Usuario INT NOT NULL,
+    Campo VARCHAR(50) NOT NULL,
+    Fecha_Ocultacion TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    PRIMARY KEY (Id_Usuario, Campo),
+
+    FOREIGN KEY (Id_Usuario)
+        REFERENCES Usuario(Id_Usuario)
+);
