@@ -1,7 +1,6 @@
 (() => {
   "use strict";
 
-  // Sinónimos por campo del perfil (se normalizan: sin tildes, minúsculas, sin símbolos)
   const CAMPOS = {
     nombre: ["nombre", "nombres", "primer nombre", "nombre de pila", "first name", "given name", "given", "fname", "firstname", "name"],
     apellido: ["apellido", "apellidos", "apellidos completos", "primer apellido", "last name", "family name", "surname", "lname", "lastname"],
@@ -124,12 +123,10 @@
       if (campo === "correo" && el.type === "email") p += 3;
       if (campo === "telefono" && el.type === "tel") p += 3;
 
-      // Si dice "empresa", "universidad" o "habilidad", evitar que lo gane el campo "nombre"
       if (campo === "nombre" && /\b(empresa|company|empleador|universidad|institucion|habilidad|habilidades|skill|skills)\b/.test(textoTotal)) {
         p = 0;
       }
 
-      // Desempatar fechas de estudio vs experiencia laboral si ambas están seleccionadas
       if (p > 0 && FECHAS_LABORALES.has(campo)) {
         if (CONTEXTO_LABORAL.test(textoTotal)) p += 2;
         if (CONTEXTO_ACADEMICO.test(textoTotal)) p -= 2;
@@ -144,15 +141,15 @@
 
     const [campo, p1] = puntos[0];
     const p2 = puntos[1]?.[1] ?? 0;
-    if (p1 < 2) return null;   // evidencia insuficiente
-    if (p1 === p2) return null; // ambiguo: mejor no llenar
+    if (p1 < 2) return null;   
+    if (p1 === p2) return null; 
     return campo;
   }
 
   function elegible(el) {
     if (el.disabled || el.readOnly) return false;
     if (el instanceof HTMLInputElement && TIPOS_EXCLUIDOS.has(el.type)) return false;
-    return el.getClientRects().length > 0; // visible
+    return el.getClientRects().length > 0; 
   }
 
   function recolectar(raiz, salida = []) {
