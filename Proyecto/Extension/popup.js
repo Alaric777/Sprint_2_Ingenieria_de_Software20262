@@ -5,7 +5,6 @@ const campos = [
   "fechaInicioEstudios", "fechaFinEstudios"
 ];
 
-// Campos de experiencia laboral que se envían a content.js al autocompletar
 const camposExperiencia = [
   "empresa",
   "cargo",
@@ -253,7 +252,6 @@ document.getElementById("autocompletar").addEventListener("click", async () => {
 
     await chrome.storage.local.set({ perfil });
 
-    // Traer la experiencia laboral y las habilidades de la API y agregarlas al objeto `perfil`
     Object.assign(
       perfil,
       await datosExperiencia(perfilGuardado.id, seleccionados),
@@ -405,7 +403,6 @@ function campoConRotulo(rotulo, control) {
   return el("div", {}, el("label", {}, rotulo + " ", control));
 }
 
-// Selector y checkboxes de experiencia y habilidades dentro de #seleccion
 const selectorExperiencia = el("select");
 
 function actualizarSelectorExperiencia(lista) {
